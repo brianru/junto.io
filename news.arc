@@ -1,9 +1,24 @@
-; News.  2 Sep 06.
+; News.  02 Sep 06.
+; Junto. 26 Sep 13.
 
 ; to run news: (nsv), then go to http://localhost:8080
 ; put usernames of admins, separated by whitespace, in arc/admins
 
 ; bug: somehow (+ votedir* nil) is getting evaluated.
+
+; refactor
+; TODO MONDAY refactor votes from table to template
+; TODO MONDAY refactor out common fields from templates
+; TODO consolidate/modularize spam and rate limiting features?
+; TODO rationalize all the constants!
+
+; subtract
+; TODO remove prefer-url* concept
+
+; add
+; TODO better font.
+; TODO add GROUPS
+; TODO is there a better data structure than vanilla hashtables? something purely functional?...
 
 (declare 'atstrings t)
 
@@ -1434,7 +1449,7 @@ function vote(node) {
                            req!ip)
       (tab
         (row "title"  (input "t" title 50))
-        (if prefer-url*
+        (if prefer-url* ; refactor to remove this
           (do (row "url" (input "u" url 50))
               (when showtext
                 (row "" "<b>or</b>")
