@@ -831,7 +831,7 @@ function vote(node) {
 
 ; remember to set caching to 0 when testing non-logged-in
 
-(= caching* 1 perpage* 30 threads-perpage* 10 maxend* 210)
+(= caching* 1 perpage* 3 threads-perpage* 10 maxend* 210)
 
 ; Limiting that newscache can't take any arguments except the user.
 ; To allow other arguments, would have to turn the cache from a single
