@@ -600,6 +600,8 @@ function vote(node) {
                (tag (td style "line-height:12pt; height:10px;")
                  (spanclass pagetop (prbold label))))))))
   (map [_ user] pagefns*)
+  (spacerow 5)
+  (tr (tdcolor (main-color user) (link "> This week's prompt!" "prompts")))
   (spacerow 10))
 
 (def gen-logo ()
