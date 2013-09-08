@@ -22,12 +22,12 @@
 
 (declare 'atstrings t)
 
-(= this-site*    "My Forum"
-   site-url*     "http://news.yourdomain.com/"
-   parent-url*   "http://www.yourdomain.com"
+(= this-site*    "Junto.io"
+   site-url*     "http://junto.io/"
+   parent-url*   "http://www.junto.io"
    favicon-url*  ""
-   site-desc*    "What this site is about."               ; for rss feed
-   site-color*   (color 180 180 180)
+   site-desc*    "A place for meaningful conversation."               ; for rss feed
+   site-color*   (color 45 180 90)
    border-color* (color 180 180 180)
    prefer-url*   t)
 
