@@ -21,7 +21,7 @@
 ; TODO is there a better data structure than vanilla hashtables? something purely functional?...
 
 (declare 'atstrings t)
-(require "lib/re.arc")
+(require "/home/ec2-user/anarki/lib/re.arc")
 
 (= this-site*    "Junto.io"
    site-url*     "http://junto.io/"
