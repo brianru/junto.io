@@ -21,6 +21,7 @@
 ; TODO is there a better data structure than vanilla hashtables? something purely functional?...
 
 (declare 'atstrings t)
+(require "lib/re.arc")
 
 (= this-site*    "My Forum"
    site-url*     "http://news.yourdomain.com/"
@@ -1864,13 +1865,16 @@ function vote(node) {
 (def superparent (i)
   (aif i!parent (superparent:item it) i))
 
+(def htmlbr (text)
+  (re-replace "\r\n" text "<br>"))
+
 (def display-item-text (s user)
   (when (and (cansee user s)
              (in s!type 'story 'poll)
              (blank s!url)
              (~blank s!text))
     (spacerow 2)
-    (row "" s!text)))
+    (row "" (htmlbr s!text))))
 
 
 ; Edit Item

@@ -33,9 +33,9 @@
 
 (deftem profile
   id       nil
-  name     nil
+  name     nil ; todo, remove this?
   created  (seconds)
-  auth     0 ; 0 is fale, 1 is true
+  auth     0 ; 0 is false, 1 is true
   member   nil ; TODO delete, not used
   submitted nil
   votes     nil ; for now just recent, elts each (time id by sitename dir)
