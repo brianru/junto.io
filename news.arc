@@ -950,8 +950,7 @@ function vote(node) {
     (let n start
       (each i (cut items start end)
         (display-item (and number (++ n)) i user whence t)
-        (spacerow (if (acomment i) 15 5))
-        (tr (tag (td colspan 2)) (td (pr i!text))))) ; display story text on newspage
+        (spacerow (if (acomment i) 15 5))))
     (when end
       (let newend (+ end perpage*)
         (when (and (<= newend maxend*) (< end (len items)))
