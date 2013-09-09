@@ -950,6 +950,8 @@ function vote(node) {
     (let n start
       (each i (cut items start end)
         (display-item (and number (++ n)) i user whence t)
+        ; add line to display story text here
+        (tr (tag (td colspan 2)) (display-item-text i user))
         (spacerow (if (acomment i) 15 5))))
     (when end
       (let newend (+ end perpage*)
