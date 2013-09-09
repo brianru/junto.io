@@ -23,12 +23,12 @@
 (declare 'atstrings t)
 (require "lib/re.arc")
 
-(= this-site*    "My Forum"
-   site-url*     "http://news.yourdomain.com/"
-   parent-url*   "http://www.yourdomain.com"
+(= this-site*    "Junto.io"
+   site-url*     "http://junto.io/"
+   parent-url*   "http://www.junto.io"
    favicon-url*  ""
-   site-desc*    "What this site is about."               ; for rss feed
-   site-color*   (color 180 180 180)
+   site-desc*    "A place for meaningful conversation."               ; for rss feed
+   site-color*   (color 45 180 90)
    border-color* (color 180 180 180)
    prefer-url*   t)
 
@@ -601,6 +601,8 @@ function vote(node) {
                (tag (td style "line-height:12pt; height:10px;")
                  (spanclass pagetop (prbold label))))))))
   (map [_ user] pagefns*)
+  (spacerow 5)
+  (tr (tdcolor (main-color user) (link "> This week's prompt!" "prompts")))
   (spacerow 10))
 
 (def gen-logo ()
@@ -830,7 +832,7 @@ function vote(node) {
 
 ; remember to set caching to 0 when testing non-logged-in
 
-(= caching* 1 perpage* 30 threads-perpage* 10 maxend* 210)
+(= caching* 1 perpage* 3 threads-perpage* 10 maxend* 210)
 
 ; Limiting that newscache can't take any arguments except the user.
 ; To allow other arguments, would have to turn the cache from a single
@@ -948,7 +950,8 @@ function vote(node) {
     (let n start
       (each i (cut items start end)
         (display-item (and number (++ n)) i user whence t)
-        (spacerow (if (acomment i) 15 5))))
+        (spacerow (if (acomment i) 15 5))
+        (tr (tag (td colspan 2)) (td (pr i!text))))) ; display story text on newspage
     (when end
       (let newend (+ end perpage*)
         (when (and (<= newend maxend*) (< end (len items)))
@@ -2632,3 +2635,4 @@ first asterisk isn't whitespace.
         (tr (td c) (tdcolor (hex>color c) (hspace 30)))))))
 
 
+(nsv)
